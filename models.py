@@ -6,7 +6,9 @@ from datetime import datetime
 class Task:
     title: str
     done: bool = False
-    created_at: str = field(default_factory=lambda: datetime.now().strftime("%Y-%m-%d %H:%M"))
+    created_at: str = field(
+        default_factory=lambda: datetime.now().strftime("%Y-%m-%d %H:%M")
+    )
 
     def to_dict(self) -> dict:
         return {"title": self.title, "done": self.done, "created_at": self.created_at}
