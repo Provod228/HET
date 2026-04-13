@@ -1,0 +1,13 @@
+services:
+  todo:
+    build: .
+    image: todo-cli
+    container_name: todo_app
+    volumes:
+      - todo_data:/app
+    stdin_open: true
+    tty: true
+    command: ["python", "main.py", "help"]
+
+volumes:
+  todo_data:
